@@ -1,0 +1,14 @@
+.breadcrumbs__list {
+    text-transform: lowercase;
+    font-size: 18px;
+}
+.breadcrumbs__list span a {
+    color: var(--grey);
+    font-weight: 600;
+}
+
+@media (max-width:689.98px) {
+    .breadcrumbs__list {   
+        font-size: 14px;
+    }
+}

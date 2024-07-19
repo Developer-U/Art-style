@@ -1,0 +1,78 @@
+/*Social icons*/
+.social {    
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    gap: 10px;  
+    align-items: center;
+}
+.footer .social { 
+    margin-left: auto;
+    width: fit-content;
+}
+.social__item  {
+    width: 100%;
+    height: 40px;
+    padding: 0;    
+}
+.social__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.social__link.whatsapp {
+    background-image: url('../img/whatsapp.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+.white-icons .social__link.whatsapp {
+    background-image: url('../img/whatsapp-white.svg');
+}
+.contacts-item .social__link.whatsapp {
+    background-image: url('../img/whatsapp-grey.svg');
+}
+.social__link.telegram {
+    background-image: url('../img/Telegram.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+.white-icons .social__link.telegram {
+    background-image: url('../img/Telegram-white.svg');   
+}
+.contacts-item .social__link.telegram {
+    background-image: url('../img/Telegram-grey.svg');
+}
+.social__link.vk {
+    background-image: url('../img/vk.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+.white-icons .social__link.vk {
+    background-image: url('../img/vk-white.svg');   
+}
+.contacts-item .social__link.vk {
+    background-image: url('../img/vk-grey.svg');
+}
+.social__link.telegram:hover, .social__link.telegram:focus, .social__link.telegram:active {
+    background-image: url('../img/Telegram-hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+.social__link.whatsapp:hover, .social__link.whatsapp:focus, .social__link.whatsapp:active {
+    background-image: url('../img/whatsapp-hover.svg');
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+.social__link.vk:hover, .social__link.vk:focus, .social__link.vk:active {
+    background-image: url('../img/vk-hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}

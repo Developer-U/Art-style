@@ -1,0 +1,58 @@
+/*
+* Styles for Heading width decor (stripes)
+*/
+
+.head-stripes-wrap {
+    margin-bottom: 40px;
+    max-width: calc(100% - 90px);  
+}
+.head-stripes {
+    position: relative;
+    display: inline;
+    width: fit-content;    
+}
+.head-stripes::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 26px;
+    width: 74px;
+    bottom: 23px;
+    right: -95px;
+    background: url('../img/title_stripes.svg') no-repeat center/contain;
+}
+.get-price .head-stripes-wrap {
+    max-width: 1000px;
+}
+.title-box h2.head-stripes-wrap, .best-product__titlebox .head-stripes-wrap  {
+    margin-bottom: 0;
+}
+
+
+@media (max-width:439px) {
+    .head-stripes-wrap, .get-price .head-stripes-wrap {
+        max-width: calc(100% - 70px);
+    }
+}
+@media (max-width:999.98px) {
+    .head-stripes::after {  
+        height: 22px;
+        width: 56px;
+        bottom: 12px;
+        right: -78px;
+    }
+}
+@media (max-width:991px) {
+    .head-stripes-wrap, .get-price .head-stripes-wrap {
+        max-width: calc(100% - 90px);  
+    }
+}
+@media (max-width:689.98px) {
+    .head-stripes::after {
+        height: 17px;
+        width: 44px;
+        bottom: 6px;
+        right: -59px;
+    }
+}
+

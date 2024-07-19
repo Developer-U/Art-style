@@ -1,0 +1,6 @@
+.js-targetTabs {
+    display: none;
+}
+.js-targetTabs.active {
+    display: block;
+}

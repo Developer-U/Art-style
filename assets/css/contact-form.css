@@ -1,0 +1,101 @@
+/*
+* Styles for Contact Form 7
+*/
+
+
+form input.input-form {
+    width: 100%;
+    height: 46px;
+    border: 1px solid var(--grey);
+    text-align: left;
+    padding: 10px 26px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    font-weight: bold;
+}
+form input.button {
+    padding: 18px 40px;
+}
+.product-form form p {
+    margin-bottom: 0;
+}
+form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
+    color: var(--grey);
+    font-size: 22px;    
+}
+.product-form form input.input-form, .product-form form input.input-form::placeholder, .product-form form .textarea, .product-form .input-form textarea::placeholder {
+    color: var(--grey);
+    font-size: 22px;  
+}
+.product-form form input.input-form:focus, .product-form form .textarea:focus {
+    border: 1px solid var(--black);
+    background: rgba(255, 255, 255, 0.3);
+}
+footer.light form input.input-form, footer.light form input.input-form::placeholder, footer.light form .textarea, footer.light textarea::placeholder {
+    color: var(--black);
+}
+form .input-form.textarea {
+    height: 100px;
+    margin-bottom: 0;
+    border: 1px solid var(--grey);
+    padding: 10px 26px;
+    background: rgba(255, 255, 255, 0.85);
+}
+.popup__form form p {
+    margin-bottom: 0;
+}
+.popup-menu__wrapper {
+    gap: 3rem;
+}
+.agree-wrap {
+    grid-template-columns: 1fr auto;
+    gap:16px;
+    margin-bottom: 10px;
+}
+span.wpcf7-list-item input[type="checkbox"] {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 6px;
+}
+.agree + span.wpcf7-list-item-label {
+    font-size: 18px;
+    margin-left: 12px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    color: var(--black);
+    margin-top: -24px;
+}
+.agree + span.wpcf7-list-item-label a {
+    color: var(--grey);   
+}
+.popup__form form p {
+    margin-bottom: 0;
+    position: relative;
+}
+form .wpcf7-form-control-wrap {
+    position: static;
+}
+.wpcf7 form .wpcf7-not-valid-tip { 
+    font-size: 12px;
+    font-style:normal;
+    margin-top: 0;
+    font-family: var(--bellota);
+}
+.wpcf7 form .wpcf7-response-output {
+    font-size: 12px !important;
+}
+.wpcf7 form.invalid .wpcf7-response-output {
+    border-color: var(--red) !important;
+}
+
+@media (max-width:689.98px) {
+    .agree + span.wpcf7-list-item-label {
+        font-size: 15px;
+    }
+    .agree-wrap {
+        grid-template-columns: 1fr;
+    }
+}
