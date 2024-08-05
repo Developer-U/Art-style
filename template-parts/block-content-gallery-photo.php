@@ -14,13 +14,13 @@
     ?>
 
         <li class="gallery-tab-list__item gallery-tab-list__item_1">
-            <a href="<?php echo $gallery_content['second']['url']; ?>" class="gallery-tab-list__image small" data-fancybox="gallery_<?php echo $index; ?>">
+            <a href="<?php echo $gallery_content['second']['url']; ?>" class="gallery-tab-list__image small" data-fancybox="gallery">
                 <img src="<?php echo $gallery_content['second']['url']; ?>" alt="<?php echo $gallery_content['second']['alt']; ?>">
             </a>
-            <a href="<?php echo $gallery_content['first']['url']; ?>" class="gallery-tab-list__image large" data-fancybox="gallery_<?php echo $index; ?>">                                    
+            <a href="<?php echo $gallery_content['first']['url']; ?>" class="gallery-tab-list__image large" data-fancybox="gallery">                                    
                 <img src="<?php echo $gallery_content['first']['url']; ?>" alt="<?php echo $gallery_content['first']['alt']; ?>">
             </a>
-            <a href="<?php echo $gallery_content['third']['url']; ?>" class="gallery-tab-list__image small" data-fancybox="gallery_<?php echo $index; ?>">
+            <a href="<?php echo $gallery_content['third']['url']; ?>" class="gallery-tab-list__image small" data-fancybox="gallery">
                 <img src="<?php echo $gallery_content['third']['url']; ?>" alt="<?php echo $gallery_content['third']['alt']; ?>">
             </a>
         </li>

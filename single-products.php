@@ -28,7 +28,8 @@ if (
 	return;
 }
 $post_id = get_the_ID();
-$product_block_type = get_field('product_block_type', $post_id);  
+$product_block_type = get_field('product_block_type', $post_id);
+$socials =  get_field('social_icons', 'options'); 
 
 // Block Top
 get_template_part('template-parts/top', 'pages');
@@ -175,6 +176,15 @@ if( $post_id == '64') { // Если это продукт с ID #64 то одн�
 
 					<div class="product-text-block__text post">
 						<?php echo $product_block_text; ?>
+
+						<?php
+						if( $socials['whatsapp']) { ?>
+
+							<a href="https://api.whatsapp.com/send?phone=<?php echo $socials['whatsapp']; ?>" target="_blank" class="button red-btn mt-2">	
+								заказать								
+                			</a>
+
+						<?php } ?>
 					</div>
 				</div>
 
