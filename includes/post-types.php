@@ -82,8 +82,6 @@ function products()
   register_post_type('products',$args);  
 }
 
-
-
 /* Регистрируем новый тип записей - Акции
 -----------------------------------------------*/
 add_action('init', 'actions');
@@ -121,4 +119,43 @@ function actions()
 
   );
   register_post_type('actions',$args);  
+}
+
+/* Регистрируем новый тип записей - Отзывы
+-----------------------------------------------*/
+add_action('init', 'reviews');
+function reviews()
+{
+  $labels = array(
+    'name' => 'Отзывы',
+    'singular_name' => 'Отзыв',
+    'add_new' => 'Добавить Отзыв',
+    'add_new_item' => 'Добавить новый Отзыв',
+    'edit_item' => 'Редактировать Отзыв',
+    'new_item' => 'Новый Отзыв',
+    'view_item' => 'Посмотреть Отзывы',
+    'search_items' => 'Найти Отзывы',
+    'not_found' =>  'Отзывов не найдено',
+    'not_found_in_trash' => 'В корзине отзывов не найдено',
+    'parent_item_colon' => '',
+    'menu_name' => 'Отзывы'
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'menu_icon' => 'dashicons-format-status',
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => true,
+    'hierarchical' => true,
+    'menu_position' => 5,
+    'supports' => array('title','editor','thumbnail', 'custom-fields'),
+
+  );
+  register_post_type('reviews',$args);  
 }

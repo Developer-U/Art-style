@@ -10,11 +10,11 @@ $cta_text = get_field('cta_text', $page_id);
 if( $socials['whatsapp'] || $socials['telegram'] || $socials['vk']) { ?>
     <div class="hero__zakaz fast-zakaz d-grid gap-3 align-items-left align-items-md-center flex-column flex-md-row">
         <? if( $cta_text ) { ?>
-            <a class="fast-zakaz__text col-auto" href="#" data-popup-open="fast-popup">
+            <a class="<?php if(is_front_page()) { ?>fast-zakaz__text <?php } else {?>button red-btn <?php } ?> col-auto" href="#" data-popup-open="fast-popup">
                 <?php echo $cta_text; ?>
             </a>
         <?php } else { ?>
-            <a class="fast-zakaz__text col-auto" href="#" data-popup-open="fast-popup">
+            <a class="<?php if(is_front_page()) { ?>fast-zakaz__text <?php } else {?>button red-btn <?php } ?> col-auto" href="#" data-popup-open="fast-popup">
                 Закажите качественный натяжной потолок в один клик
             </a>
         <?php } ?>

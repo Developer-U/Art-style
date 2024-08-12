@@ -20,6 +20,9 @@ get_template_part('template-parts/block', 'why');
 // Block Advantages
 get_template_part('template-parts/block', 'advantages');
 
+// Block Reviews
+get_template_part('template-parts/block', 'reviews');
+
 // Block Few Video
 get_template_part('template-parts/block', 'few-video');
 

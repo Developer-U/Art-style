@@ -8,7 +8,7 @@ $partners_title = get_field('partners_title', $page_id);
 if( have_rows('new_partner_logo') ) {
 ?>
 
-    <section class="partners"
+    <section class="partners dark"
         data-aos="fade-up"
         data-aos-offset="100"
         data-aos-delay= 100

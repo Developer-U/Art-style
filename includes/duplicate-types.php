@@ -90,6 +90,8 @@ add_action( 'admin_action_true_duplicate_post_as_draft', 'true_duplicate_post_as
  
 // Добавляем ссылку дублирования поста для post_row_actions
 add_filter( 'post_row_actions', 'true_duplicate_post_link', 10, 2 );
+add_filter( 'reviews_row_actions', 'true_duplicate_post_link', 10, 2);
+
 function true_duplicate_post_link( $actions, $post ) {
     if ( current_user_can( 'edit_posts' ) ) {
         $actions[ 'duplicate' ] = '<a href="' . wp_nonce_url( add_query_arg( array( 'action' => 'true_duplicate_post_as_draft', 'post' => $post->ID ), 'admin.php' ), basename(__FILE__), 'true_duplicate_nonce' ) . '">Дублировать</a>';
@@ -98,3 +100,4 @@ function true_duplicate_post_link( $actions, $post ) {
 }
 
 add_filter( 'products_row_actions', 'true_duplicate_post_link', 10, 2);
+

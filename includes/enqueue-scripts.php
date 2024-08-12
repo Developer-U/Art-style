@@ -17,6 +17,7 @@ function my_scripts_method(){
     wp_enqueue_style( 'social', get_stylesheet_directory_uri() . '/assets/css/social.css', array(), null, 'all');
     wp_enqueue_style( 'menu', get_stylesheet_directory_uri() . '/assets/css/menu.css', array(), null, 'all');
 	wp_enqueue_style( 'player', get_stylesheet_directory_uri() . '/assets/css/player.css', array(), null, 'all');
+	wp_enqueue_style( 'reviews_css', get_stylesheet_directory_uri() . '/assets/css/reviews.css', array(), null, 'all');
 	wp_enqueue_style( 'breadcrumbs', get_stylesheet_directory_uri() . '/assets/css/breadcrumbs.css', array(), null, 'all');
 	wp_enqueue_style( 'estore-swiper', get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), null, 'all');
 	wp_enqueue_style( 'contact-form', get_stylesheet_directory_uri() . '/assets/css/contact-form.css', array(), null, 'all');
@@ -37,7 +38,8 @@ function my_scripts_method(){
 	* Если меню с подменю второго уровня
 	*/
 	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), null, true );
-	wp_enqueue_script( 'menu-js', get_stylesheet_directory_uri() . '/assets/js/menu-submenu2.js', array(), null, true );	
+	wp_enqueue_script( 'menu-js', get_stylesheet_directory_uri() . '/assets/js/menu-submenu2.js', array(), null, true );
+	wp_enqueue_script( 'reviews-js', get_stylesheet_directory_uri() . '/assets/js/reviews.js', array(), null, true );	
 	wp_enqueue_script( 'tabs_js', get_stylesheet_directory_uri() . '/assets/js/tabs.js', array(), null, true );
 	wp_enqueue_script( 'swiper-bundle-js', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', array('jquery'), null, true );
 	wp_enqueue_script( 'popup-js', get_stylesheet_directory_uri() . '/assets/js/popups.js', array('jquery'), null, true );

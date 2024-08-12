@@ -14,7 +14,7 @@ $few_video_text = get_field('few_video_text', $page_id);
 if( have_rows('new_video_item', $page_id) ) { 
 ?>
 
-    <section class="dark few_video">
+    <section class="few_video <?php if(!is_page('about')) {?>dark<?php } ?>">
         <?php     
         if($few_video_title ) {
         ?>
