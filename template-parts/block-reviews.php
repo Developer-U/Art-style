@@ -47,6 +47,7 @@ if ($query_reviews->have_posts()) {
                     while ($query_reviews->have_posts()):
                         $query_reviews->the_post(); 
                         $person_post = get_field('person_post');
+                        $designer_fields = get_field('designer_fields');
                         ?>
                         
                         <li class="why-list__item reviews-item position-relative js-reviews">                            
@@ -62,9 +63,35 @@ if ($query_reviews->have_posts()) {
 
                             <div class="reviews-item__bottom reviews-bottom d-grid">
                                 <div class="reviews-item__content">
-                                    <h4 class="reviews-bottom__title">
-                                        <?php the_title(); ?>
-                                    </h4>
+                                    <?php
+                                    if( $designer_fields['name'] ) { ?>
+                                        <div class="present-block d-grid align-items-center">
+                                            <h4 class="reviews-bottom__title present-block__title">
+                                                <?php the_title(); ?>
+                                            </h4>
+
+                                            <div class="present-block__designer designer-block d-grid gap-2 align-items-center">
+                                                <figure class="designer-block__photo">
+                                                    <?php
+                                                    if( $designer_fields['photo'] ) { ?>             
+                                                        <img src="<?php echo $designer_fields['photo']['url']; ?>" alt="<?php echo $designer_fields['photo']['alt']; ?>">   
+                                                    <?php } else { ?>
+                                                        <img class="no-image" src="/wp-content/themes/blocksy-child/assets/img/no-image.jpg" alt="фото">
+                                                    <?php }
+                                                    ?>
+                                                </figure>
+
+                                                <div class="designer-block__text">
+                                                    <h5><?php echo $designer_fields['name']; ?></h5>
+                                                    <p><?php echo $designer_fields['post']; ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } else { ?>
+                                        <h4 class="reviews-bottom__title">
+                                            <?php the_title(); ?>
+                                        </h4>
+                                    <?php } ?>                                    
 
                                     <div class="reviews-item__text">
                                         <div>
