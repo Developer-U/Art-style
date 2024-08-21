@@ -12,8 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     <section class="top-pages dark">
         <div class="container">
             <h1 class="top-pages__title">
-                <?php 
-                is_category() ? the_archive_title('') : the_title(); ?>
+                <?php                 
+                    is_category() ? the_archive_title('') : the_title();                  
+                ?>                
             </h1>            
 
             <!-- breadcrumbs -->

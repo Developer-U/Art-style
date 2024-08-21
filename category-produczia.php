@@ -15,7 +15,7 @@ add_filter( 'get_the_archive_title', function( $title ){
 
 $args = array(
 	'parent' => get_queried_object_id(),
-	'hide_empty' => 0,
+	'hide_empty' => 1,
 	'exclude' => '', // ID рубрики, которую нужно исключить
 	'number' => '0',
 	'orderby' => 'count',

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $page_id = get_the_ID();
 
-if( !is_page('actions') ) {
+if( !is_archive('actions') ) {
     $post_length = 2;
 } else {
     $post_length = 99;
@@ -39,7 +39,7 @@ if ($query_actions->have_posts() )  { ?>
     >
         <div class="container">
             <?php
-            if( !is_page('actions') ) { ?>
+            if( !is_archive('actions') ) { ?>
                 <div class="head-stripes-wrap" >
                     <h2 class="head-stripes get-price__title">
                         <?php echo
@@ -58,7 +58,7 @@ if ($query_actions->have_posts() )  { ?>
         </div>  
 
         <div class="container"> 
-            <ul class="actions-block__list actions-list d-grid <?php if( is_page('actions') ) { ?>actions-page<?php } ?>">
+            <ul class="actions-block__list actions-list d-grid <?php if( is_archive('actions') ) { ?>actions-page<?php } ?>">
                 <?php
                 if ($query_actions->have_posts() )  { ?>
                 <?php while ( $query_actions->have_posts() ) : $query_actions->the_post();  
@@ -83,7 +83,7 @@ if ($query_actions->have_posts() )  { ?>
                 <?php } ?>	 
             </ul>
 
-            <?php if( !is_page('actions') ) { ?>
+            <?php if( !is_archive('actions') ) { ?>
                 <a href="/actions" class="button red-btn">все наши акции</a> 
             <?php } ?>	 
         </div>
