@@ -1067,6 +1067,10 @@ h2.image-items-list__title {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.gallery-tab-list__image {
+    margin-bottom: 10px;
+}
+
 /*Gallery Block end*/
 
 
@@ -1153,6 +1157,10 @@ h2.image-items-list__title {
 
 .contacts-item__item.name.telegram::before {
     background-image: url('./assets/img/Telegram-black.svg');
+}
+
+.contacts-item__item.name.address::before {
+    background-image: url('./assets/img/location.svg');
 }
 
 .contacts-item__list.first .contacts-item__item {
@@ -1565,6 +1573,10 @@ body .nav-links span.nav-subtitle {
     .product-block__image {
         height: 346px;
     }
+
+    .gallery-tab-list__image iframe {
+        height: 23vw;
+    }
 }
 
 @media (max-width:1199px) {
@@ -1688,6 +1700,10 @@ body .nav-links span.nav-subtitle {
 
     .why-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-tab-list__image iframe {
+        height: 21vw;
     }
 }
 
@@ -2347,6 +2363,10 @@ body .nav-links span.nav-subtitle {
     section.product-block {
         padding-top: 40px;
         padding-bottom: 40px;
+    }
+
+    .gallery-tab-list__image iframe {
+        height: 60vw;
     }
 }
 
