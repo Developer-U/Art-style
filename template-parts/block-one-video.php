@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 $page_id = get_the_ID();
+
 $one_video_title = get_field('one_video_title', $page_id);
 $one_video_text = get_field('one_video_text', $page_id);
 
@@ -23,7 +24,7 @@ if ($one_video || $one_video_link) {
             <div class="head-stripes-wrap">
                 <h2 class="head-stripes get-price__title">
                     <?php echo
-                        $actions_block_title ? $actions_block_title : 'Видео о нас';
+                        $one_video_title ? $one_video_title : 'Видео о нас';
                     ?>
                 </h2>
             </div>

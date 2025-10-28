@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive peage post type: actions
+ * Archive peage post type: reviews
  * Архивная страница с выводом постов Акции
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -11,21 +11,22 @@ add_filter( 'get_the_archive_title', function( $title ){
 	return preg_replace('~^[^:]+: ~', '', $title );
 });
 
-$free_block_title_actions = get_field('free_block_title_actions', 'options');
+$free_block_title_reviews = get_field('free_block_title_reviews', 'options');
 
 // Выбор типа контента - текст, или аккордионы
-$content_type = get_field('content_type_actions', 'options');
+$content_type = get_field('content_type_reviews', 'options');
 
 // Контент текстом
-$free_block_content_actions = get_field('free_block_content_actions', 'options');
+$free_block_content_reviews = get_field('free_block_content_reviews', 'options');
 
 get_header();
-?>
 
-<section class="top-pages dark">
+// Block Top
+?>
+<section class="top-pages">
     <div class="container">
         <h1 class="top-pages__title">
-            Акции               
+            Отзывы               
         </h1>            
 
         <!-- breadcrumbs -->
@@ -43,34 +44,34 @@ get_header();
 </section>
 
 <?php
-// Block Actions
-get_template_part('template-parts/block', 'actions');
+// Block Contacts
+get_template_part('template-parts/block', 'reviews');
 
-// Block Attention
-get_template_part('template-parts/block', 'attention');
+// Block Get Price
+get_template_part('template-parts/block', 'get-price');
 
-if ($free_block_content_actions || have_rows('new_accordion_item_actions', 'options')) {
+if ($free_block_content_reviews || have_rows('new_accordion_item_reviews', 'options')) {
     ?>
 
     <section class="free-block">
         <div class="container">
-        <?php if ($free_block_title_actions) { ?>
-                <h2 class="head-stripes"><?php echo $free_block_title_actions; ?></h2>
+        <?php if ($free_block_title_reviews) { ?>
+                <h2 class="head-stripes"><?php echo $free_block_title_reviews; ?></h2>
             <?php }
             ?>
 
             <div class="free-block__content post mt-2 mt-md-4">
                 <?php
                 if ($content_type == 'текст') {
-                    echo $free_block_content_actions;
+                    echo $free_block_content_reviews;
                 } else { ?>
                     <ul class="block-accordion__list block-accord-list my-accordion accordionjs">
                         <?php
-                        if (have_rows('new_accordion_item_actions', 'options')) { 
-                            while (have_rows('new_accordion_item_actions', 'options')) {
+                        if (have_rows('new_accordion_item_reviews', 'options')) { 
+                            while (have_rows('new_accordion_item_reviews', 'options')) {
                                 the_row();
-                                $new_accordion__item_title = get_sub_field('new_accordion_item_title_actions', 'options');
-                                $new_accordion__item_text = get_sub_field('new_accordion_item_text_actions', 'options');
+                                $new_accordion__item_title = get_sub_field('new_accordion_item_title_reviews', 'options');
+                                $new_accordion__item_text = get_sub_field('new_accordion_item_text_reviews', 'options');
                                 ?>
 
                                 <li class="block-accord-list__item accord-list-item mb-2 mb-lg-4">

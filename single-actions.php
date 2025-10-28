@@ -77,4 +77,6 @@ get_template_part('template-parts/top', 'pages');
 have_posts();
 wp_reset_query();
 
+get_template_part('template-parts/free', 'block');
+
 get_footer();

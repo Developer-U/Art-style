@@ -15,4 +15,6 @@ get_template_part('template-parts/top', 'pages');
 // Block Gallery
 get_template_part('template-parts/block', 'galery');
 
+get_template_part('template-parts/free', 'block');
+
 get_footer();

@@ -38,6 +38,25 @@ body ol li strong {
     text-shadow: 0px 0px 0.8px var(--black);
 }
 
+@keyframes move {
+
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.fast-zakaz__text {
+    animation: move 3s infinite reverse ease-in-out;
+}
+
 body,
 body p,
 body h1,
@@ -48,6 +67,23 @@ body span,
 body ul li,
 body ol li {
     line-height: 120%;
+}
+
+body h4.fast-zakaz__before {
+    color: #BA1419;
+    position: relative;
+    width: fit-content;
+}
+
+body h4.fast-zakaz__before::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -58px;
+    right: -17px;
+    width: 60px;
+    height: 60px;
+    background: url('./assets/img/arrow-left.svg') no-repeat center/contain;
 }
 
 body ul li,
@@ -92,6 +128,7 @@ section {
 }
 
 section.top-pages {
+    padding-top: 175px;
     padding-bottom: 36px;
 }
 
@@ -107,6 +144,40 @@ section.contacts {
 
 section.dark {
     background-color: var(--light-grey);
+}
+
+section.zamer {
+    background-color: #D9D9D9;
+}
+
+.overlay::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 2px);
+    background: rgba(217, 217, 217, .93);
+}
+
+.zamer-form {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 9px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.zamer-form .wpcf7-spinner {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+}
+
+.overlay .container-fluid, .overlay .container {
+    position: relative;
+    z-index: 1;
 }
 
 .grey-gradient {
@@ -164,6 +235,11 @@ body a.button {
     transition: all .25s ease-in-out;
 }
 
+body button.short {
+    min-height: 42px;
+    padding: 1px 80px;
+}
+
 body .button {
     padding: inherit;
 }
@@ -203,6 +279,10 @@ body .post p {
 
 body .post ul {
     padding-left: 40px;
+}
+
+body .free-block .post ul {
+    padding-left: 0;
 }
 
 body .post ul li {
@@ -247,6 +327,36 @@ body .button.more-btn {
 
 .header__logo {
     width: 235px;
+}
+
+.header-under {
+    min-height: 60px;
+    background-color: #D9D9D9;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header-under .ct-container {
+    column-gap: 40px;
+    row-gap: 12px;
+}
+
+.header-under__address {
+    font-family: var(--bellota);
+    font-size: 16px;
+    position: relative;
+}
+
+.header-under__address::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    margin-right: 7px;
+    left: 0;
+    background: url('../blocksy-child/assets/img/geo_mark.svg') no-repeat center/contain;
 }
 
 /*Header end*/
@@ -332,6 +442,8 @@ section.hero {
 
 body a.fast-zakaz__text {
     font-size: 34px;
+    margin-left: 30px;
+    display: block;
     margin-bottom: 0;
     width: fit-content;
     color: var(--black);
@@ -1279,6 +1391,17 @@ body .nav-links span.nav-subtitle {
 
 /*Reviews end */
 
+/*Levels */
+
+.level-digit {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/*Levels end */
+
 
 /*Media*/
 
@@ -1705,6 +1828,16 @@ body .nav-links span.nav-subtitle {
     .gallery-tab-list__image iframe {
         height: 21vw;
     }
+
+    body button.short {
+        min-height: 38px;
+        padding: 1px 32px;
+        font-size: 18px;
+    }
+
+    .header-under__address {
+        font-size: 14px;
+    }
 }
 
 /* Media from Blocksy theme */
@@ -1712,10 +1845,6 @@ body .nav-links span.nav-subtitle {
     section {
         padding-top: 90px;
         padding-bottom: 90px;
-    }
-
-    section.top-pages {
-        padding-top: 140px;
     }
 
     button,
@@ -1964,12 +2093,30 @@ body .nav-links span.nav-subtitle {
     .present-block {
         grid-template-columns: 1fr;
     }
+
+    .header-under .ct-container {
+        column-gap: 16px;
+    }
+
+    .level-digit {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+
+    body h4.fast-zakaz__before {
+        font-size: 22px;
+    }
 }
 
 @media (max-width:930px) and (max-height: 420px) {
     section {
         padding-top: 60px;
         padding-bottom: 60px;
+    }
+
+    .header {
+        position: relative;
     }
 
     .header__wrapper {
@@ -2041,6 +2188,10 @@ body .nav-links span.nav-subtitle {
         padding-top: 40px;
         padding-bottom: 40px;
     }
+
+    body h4.fast-zakaz__before {
+        font-size: 18px;
+    }
 }
 
 @media (max-width:689.98px) {
@@ -2063,7 +2214,15 @@ body .nav-links span.nav-subtitle {
     }
 
     section.top-pages {
-        padding-top: 105px;
+        padding-top: 30px;
+    }
+
+    body button.short {
+        margin-left: auto;
+    }
+
+    .header {
+        position: relative;
     }
 
     .header__wrapper {
@@ -2368,6 +2527,10 @@ body .nav-links span.nav-subtitle {
     .gallery-tab-list__image iframe {
         height: 60vw;
     }
+
+    body h4.fast-zakaz__before {
+        font-size: 18px;
+    }
 }
 
 @media (max-width:767px) and (max-height: 420px) {
@@ -2393,6 +2556,15 @@ body .nav-links span.nav-subtitle {
         font-size: 17px;
     }
 }
+
+@media (max-width:594px) {
+    .zamer-form {
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+        max-width: 100%;
+    }
+}
+
 
 @media (max-width:439px) {
     section.hero {

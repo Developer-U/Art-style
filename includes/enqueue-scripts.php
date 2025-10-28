@@ -24,6 +24,8 @@ function my_scripts_method(){
 	wp_enqueue_style( 'head-stripes', get_stylesheet_directory_uri() . '/assets/css/head-stripes.css', array(), null, 'all');
 	wp_enqueue_style( 'tabs_css', get_stylesheet_directory_uri() . '/assets/css/tabs.css', array(), null, 'all');
 	wp_enqueue_style( 'popup_css', get_stylesheet_directory_uri() . '/assets/css/popup.css', array(), null, 'all');
+	wp_enqueue_style('accorion-css', get_stylesheet_directory_uri() . '/assets/css/accordion.css', array(), null, 'all');
+	wp_enqueue_style('accord-css', get_stylesheet_directory_uri() . '/assets/css/accord.css', array(), null, 'all');
 	
 
 	wp_register_script( 'bootstrap_js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', null, null, true );
@@ -34,6 +36,9 @@ function my_scripts_method(){
 	wp_enqueue_script('fancybox_js');
 	wp_register_script( 'aos_js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', null, null, true );
 	wp_enqueue_script('aos_js');
+	wp_enqueue_script('accordion-js', get_stylesheet_directory_uri() . '/assets/js/accordion.min.js', array('jquery'), null, true);
+	wp_enqueue_script('accord-js', get_stylesheet_directory_uri() . '/assets/js/accord.js', array('jquery'), null, true);
+	wp_enqueue_script('inputmask-js', get_stylesheet_directory_uri() . '/assets/js/inputmask.js', array(), 'all', true);
     /*
 	* Если меню с подменю второго уровня
 	*/

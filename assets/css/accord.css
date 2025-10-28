@@ -1,0 +1,64 @@
+body .accordionjs .acc_section {
+    z-index: 2;
+}
+
+body .accordionjs .acc_section .acc_head {
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 14px 60px 14px 34px;
+}
+
+body .accordionjs .acc_section .acc_head span {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    width: 26px;
+    height: 26px;
+    background: url('../img/arrow-down.svg') no-repeat center/contain;
+    transition: transform .4s ease-in;
+}
+
+body .accordionjs .acc_section .acc_head span.active {
+    transform: rotate(90deg);
+    transition: transform .15s ease-in-out;
+}
+
+body .accordionjs .acc_section .acc_content {
+    padding: 30px 60px 30px 34px;
+}
+
+body .accordionjs .acc_section.acc_active>.acc_head {
+    background: var(--white);
+    border-bottom: none;
+}
+
+@media (max-width:689.98px) {
+    body .accordionjs .acc_section .acc_head {
+        padding: 12px 45px 12px 23px;
+        font-size: 18px;
+    }
+
+    body .accordionjs .acc_section .acc_content {
+        padding: 20px 45px 20px 23px;
+    }
+
+    body .accordionjs .acc_section .acc_head span {
+        top: 11px;
+        right: 20px;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width:439px) {
+    body .accordionjs .acc_section .acc_head {
+        padding: 12px 45px 12px 18px;
+    }
+
+    body .accordionjs .acc_section .acc_content {
+        padding: 16px 40px 16px 18px;
+    }
+}

@@ -79,4 +79,7 @@ get_template_part('template-parts/top', 'pages');
     </section> 
 
 <?php
+
+get_template_part('template-parts/free', 'block');
+
 get_footer();

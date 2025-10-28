@@ -10,11 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $page_id = get_the_ID();
 $reviews_title = get_field('reviews_title', $page_id);
+$reviews_length = is_archive('reviews') ? 99 : 3;
 
 $arg_reviews = array(
     'orderby' => 'name',
     'order' => 'DESC',
-    'posts_per_page' => 99,
+    'posts_per_page' => $reviews_length,
     'post_type' => 'reviews',
     'post_status' => 'publish',
 );
@@ -26,7 +27,7 @@ if ($query_reviews->have_posts()) {
 
     <section class="dark reviews">
         <?php     
-        if($reviews_title ) {
+        if($reviews_title && !is_archive('reviews')) {
         ?>
 
             <div class="container">
@@ -44,7 +45,7 @@ if ($query_reviews->have_posts()) {
 
                 <?php
                 if ($query_reviews->have_posts()) {                     
-                    while ($query_reviews->have_posts()):
+                    while ($query_reviews->have_posts()) {
                         $query_reviews->the_post(); 
                         $person_post = get_field('person_post');
                         $designer_fields = get_field('designer_fields');
@@ -106,12 +107,15 @@ if ($query_reviews->have_posts()) {
                             </div>                          
                         </li>
 
-                    <?php
-                    endwhile;
-                    wp_reset_postdata() ?>
-                <?php } ?>
-
+                    <?php }
+                    wp_reset_postdata(); 
+                } ?>
             </ul>
+
+            <?php     
+        if(!is_archive('reviews')) {
+            echo '<a href="/reviews" class="button red-btn">Смотреть все отзывы</a>';
+        } ?>
         </div>
     </section>
 

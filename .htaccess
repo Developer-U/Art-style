@@ -5,6 +5,9 @@
 # созданы автоматически и подлежат изменению только через фильтры WordPress.
 # Сделанные вручную изменения между этими маркерами будут перезаписаны.
 RewriteEngine On
+#Обычный редирект с одной страницы на другую
+#Redirect 301 /products/elektrokarnizy/ https://potolki-artstyle.ru/category/elektrokarnizy
+#Глобальный редирект страниц
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 RewriteCond %{REQUEST_FILENAME} -s

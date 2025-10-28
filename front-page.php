@@ -92,14 +92,26 @@ $hero_main_advantages = get_field('hero_main_advantages');
 <!-- Block Products -->
 <?php get_template_part('template-parts/block', 'products'); ?>
 
+<!-- Block Zamer -->
+<?php get_template_part('template-parts/block', 'zamer'); ?>
+
 <!-- Block Best Product -->
 <?php get_template_part('template-parts/block', 'best-product'); ?>
+
+<section class="standert-page">
+	<div class="container post">
+		<?php echo get_the_content(); ?>
+	</div>
+</section>
 
 <!-- Block Actions -->
 <?php get_template_part('template-parts/block', 'actions'); ?>
 
 <!-- Block One Video -->
-<?php get_template_part('template-parts/block', 'one-video'); ?>
+<?php get_template_part('template-parts/block', 'one-video'); 
+
+get_template_part('template-parts/free', 'block');
+?>
 
 <?php
 get_footer();

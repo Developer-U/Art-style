@@ -4,61 +4,73 @@
     /* display: block; */
     display: none;
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     z-index: 999;
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0, 0, 0, .4);
 }
+
 .popup__wrapper {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
+
 .popup__cont {
     width: 600px;
     max-height: 80vh;
-    overflow-y:scroll;
+    overflow-y: auto;
     background-color: var(--light-grey);
     padding: 40px;
     border-radius: 14px;
 }
-.popup__cont * {
+
+.popup__cont h3.popup__heading {
     text-align: center;
 }
+
 h3.popup__heading {
     font-size: 37px;
-    line-height: 120%;  
+    line-height: 120%;
     margin-bottom: 4rem;
 }
+
+h3.popup__heading.short-margin {
+    margin-bottom: 2rem;
+}
+
 button.popup__del {
     padding: 0;
     border: none;
     background-color: transparent;
-    margin-left: auto;  
+    margin-left: auto;
     width: 26px;
     height: 26px;
     display: block;
     min-height: fit-content;
     margin-bottom: 4rem;
 }
+
 button.popup__del svg path {
     fill: var(--black);
     transition: fill .25s ease-in-out;
 }
+
 button.popup__del:hover svg path, button.popup__del:focus svg path {
     fill: var(--red);
     transition: fill .25s ease-in-out;
 }
+
 .popup__cont .social {
     margin: 0 auto;
     width: fit-content;
@@ -70,40 +82,67 @@ button.popup__del:hover svg path, button.popup__del:focus svg path {
         margin-bottom: 3rem;
     }
 }
+
+@media (max-width:1199px) {
+    button.popup__del {
+        margin-bottom: 1rem;
+    }
+
+    h3.popup__heading.short-margin {
+        margin-bottom: 1rem;
+    }
+}
+
 @media (max-width:930px) and (max-height: 420px) {
-    .popup__cont { 
+    .popup__cont {
         padding: 16px 20px;
     }
-    button.popup__del {     
+
+    button.popup__del {
         margin-bottom: 2.5rem;
     }
+
     h3.popup__heading {
         font-size: 26px;
         margin-bottom: 2rem;
     }
+
+    h3.popup__heading.short-margin {
+        margin-bottom: 1rem;
+    }
 }
+
 @media (max-width:767px) {
     .popup__cont {
-        width: 92%; 
+        width: 92%;
         padding: 30px;
     }
+
     h3.popup__heading {
         font-size: 24px;
     }
+
+    h3.popup__heading.short-margin {
+        margin-bottom: 1rem;
+    }
 }
+
 @media (max-width:439px) {
-    .popup__cont {      
+    .popup__cont {
         padding: 24px;
     }
-    button.popup__del {    
+
+    button.popup__del {
         width: 22px;
-        height: 22px;   
+        height: 22px;
         margin-bottom: 3rem;
     }
-    button.popup__del svg {    
+
+    button.popup__del svg {
         width: 100%;
         height: 100%;
     }
+
     h3.popup__heading {
         font-size: 20px;
         margin-bottom: 2rem;
@@ -112,4 +151,3 @@ button.popup__del:hover svg path, button.popup__del:focus svg path {
 
 
 /*Popups end*/
-

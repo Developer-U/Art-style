@@ -18,4 +18,6 @@ get_template_part('template-parts/block', 'contacts');
 // Block Get Price
 get_template_part('template-parts/block', 'get-price');
 
+get_template_part('template-parts/free', 'block');
+
 get_footer();

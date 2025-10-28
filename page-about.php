@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
@@ -28,5 +28,7 @@ get_template_part('template-parts/block', 'few-video');
 
 // Block Partners
 get_template_part('template-parts/block', 'partners');
+
+get_template_part('template-parts/free', 'block');
 
 get_footer();

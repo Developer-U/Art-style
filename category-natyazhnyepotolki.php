@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Produczia
- * The template for displaying archive Produczia
+ * Template Name: natyazhnyepotolki
+ * The template for displaying archive natyazhnyepotolki
  * Архивная страница категории Продукция
  */
 
@@ -11,6 +11,14 @@ get_header();
 add_filter( 'get_the_archive_title', function( $title ){
 	return preg_replace('~^[^:]+: ~', '', $title );
 });
+
+$free_block_title_natyazhnyepotolki = get_field('free_block_title_natyazhnyepotolki', 'options');
+
+// Выбор типа контента - текст, или аккордионы
+$content_type = get_field('content_type_natyazhnyepotolki', 'options');
+
+// Контент текстом
+$free_block_content_natyazhnyepotolki = get_field('free_block_content_natyazhnyepotolki', 'options');
 
 
 $taxonomy = 'category'; // Из файла post-types это название самой рубрики
@@ -25,7 +33,7 @@ $arg_posts =  array(
         array(
             'taxonomy' => 'category', // опять же - здесь название рубрики
             'field' => 'slug',
-            'terms'    => 'produczia', // а это название термина - из какой именно рубрики нужно вывести посты
+            'terms'    => 'natyazhnyepotolki', // а это название термина - из какой именно рубрики нужно вывести посты
         )
     )
         
@@ -75,4 +83,53 @@ get_template_part('template-parts/top', 'pages');
     </section> 
 
 <?php
+if ($free_block_content_natyazhnyepotolki || have_rows('new_accordion_item_natyazhnyepotolki', 'options')) {
+    ?>
+
+    <section class="free-block">
+        <div class="container">
+        <?php if ($free_block_title_natyazhnyepotolki) { ?>
+                <h2 class="head-stripes"><?php echo $free_block_title_natyazhnyepotolki; ?></h2>
+            <?php }
+            ?>
+
+            <div class="free-block__content post mt-2 mt-md-4">
+                <?php
+                if ($content_type == 'текст') {
+                    echo $free_block_content_natyazhnyepotolki;
+                } else { ?>
+                    <ul class="block-accordion__list block-accord-list my-accordion accordionjs">
+                        <?php
+                        if (have_rows('new_accordion_item_natyazhnyepotolki', 'options')) { 
+                            while (have_rows('new_accordion_item_natyazhnyepotolki', 'options')) {
+                                the_row();
+                                $new_accordion__item_title = get_sub_field('new_accordion_item_title_natyazhnyepotolki', 'options');
+                                $new_accordion__item_text = get_sub_field('new_accordion_item_text_natyazhnyepotolki', 'options');
+                                ?>
+
+                                <li class="block-accord-list__item accord-list-item mb-2 mb-lg-4">
+                                    <div>
+                                        <?php echo $new_accordion__item_title; ?>
+                                        <!-- Здесь span - это галка справа, которая при открытии будет поворачиваться
+                                Если галка не нужна, можно убрать этот span, но тогда убрать и лишний код js -->
+                                        <span></span>
+                                    </div>
+
+                                    <div>
+                                        <?php echo $new_accordion__item_text; ?>
+                                    </div>
+                                </li>
+                            <?php 
+                            
+                            }                            
+                        } ?>
+                    </ul>
+                <?php }
+                ?>
+            </div>
+        </div>
+    </section>
+
+<?php }
+
 get_footer();

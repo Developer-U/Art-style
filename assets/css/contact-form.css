@@ -14,27 +14,35 @@ form input.input-form {
     background: rgba(255, 255, 255, 0.85);
     font-weight: bold;
 }
+
 form input.button {
     padding: 18px 40px;
 }
+
 .product-form form p {
     margin-bottom: 0;
 }
+
 form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
     color: var(--grey);
-    font-size: 22px;    
+    font-size: 22px;
+    font-family: 'Bellota Text';
 }
+
 .product-form form input.input-form, .product-form form input.input-form::placeholder, .product-form form .textarea, .product-form .input-form textarea::placeholder {
     color: var(--grey);
-    font-size: 22px;  
+    font-size: 22px;
 }
+
 .product-form form input.input-form:focus, .product-form form .textarea:focus {
     border: 1px solid var(--black);
     background: rgba(255, 255, 255, 0.3);
 }
+
 footer.light form input.input-form, footer.light form input.input-form::placeholder, footer.light form .textarea, footer.light textarea::placeholder {
     color: var(--black);
 }
+
 form .input-form.textarea {
     height: 100px;
     margin-bottom: 0;
@@ -42,17 +50,21 @@ form .input-form.textarea {
     padding: 10px 26px;
     background: rgba(255, 255, 255, 0.85);
 }
+
 .popup__form form p {
     margin-bottom: 0;
 }
+
 .popup-menu__wrapper {
     gap: 3rem;
 }
+
 .agree-wrap {
     grid-template-columns: 1fr auto;
-    gap:16px;
+    gap: 16px;
     margin-bottom: 10px;
 }
+
 span.wpcf7-list-item input[type="checkbox"] {
     display: inline-block;
     width: 18px;
@@ -60,42 +72,83 @@ span.wpcf7-list-item input[type="checkbox"] {
     position: relative;
     top: 6px;
 }
-.agree + span.wpcf7-list-item-label {
-    font-size: 18px;
-    margin-left: 12px;
-    margin-bottom: 1rem;
-    display: inline-block;
+
+body .wpcf7 label:not(.wpcf7-form-control-wrap) {
+    display: flex;
+    gap: 13px;
+}
+
+.agree+span.wpcf7-list-item-label {
+    font-size: 16px;
     color: var(--black);
-    margin-top: -24px;
+    margin-top: 4px;
 }
-.agree + span.wpcf7-list-item-label a {
-    color: var(--grey);   
+
+.agree+span.wpcf7-list-item-label a {
+    color: var(--grey);
 }
+
 .popup__form form p {
     margin-bottom: 0;
     position: relative;
 }
+
 form .wpcf7-form-control-wrap {
     position: static;
 }
-.wpcf7 form .wpcf7-not-valid-tip { 
+
+.wpcf7 form .wpcf7-not-valid-tip {
     font-size: 12px;
-    font-style:normal;
+    font-style: normal;
     margin-top: 0;
     font-family: var(--bellota);
 }
+
 .wpcf7 form .wpcf7-response-output {
     font-size: 12px !important;
 }
+
 .wpcf7 form.invalid .wpcf7-response-output {
     border-color: var(--red) !important;
 }
 
-@media (max-width:689.98px) {
-    .agree + span.wpcf7-list-item-label {
-        font-size: 15px;
+@media (max-width:1199px) {
+    form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
+        font-size: 18px;
     }
+
+    form input.input-form {
+        height: 42px;
+    }
+
+    .agree+span.wpcf7-list-item-label {
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+
+    form input.button {
+        padding: 10px 40px;
+        min-height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:689.98px) {
+    .agree+span.wpcf7-list-item-label {
+        font-size: 12px;       
+    }
+
     .agree-wrap {
         grid-template-columns: 1fr;
+    }
+
+    form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:439px) {
+    form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
+        font-size: 15px;
     }
 }
